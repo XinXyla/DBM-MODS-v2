@@ -56,17 +56,16 @@ module.exports = {
       <br>
       <br>
       <div style="padding-top: 8px;">
-        <div style="float: left; width: 40%;">
+        <div style="width: 100%;">
           Data Name:<br>
           <input id="dataName" class="round" type="text">
-        </div>
-        <div style="float: left; width: 60%;">
+        </div><br>
+        <div style="width: 100%;">
           Default Value (if data doesn't exist):<br>
           <input id="defaultVal" class="round" type="text" value="0" placeholder="Use '' for insert text">
         </div>
       </div>
-      <br>
-      <br>
+   
       <br>
       <div style="padding-top: 8px;">
         <div style="float: left; width: 35%;">
@@ -79,7 +78,7 @@ module.exports = {
           Variable Name:<br>
           <input id="varName2" class="round" type="text">
         </div>
-      </div>
+      </div><br><br><br><br>Checagem: v2.0.9 - By XinXyla<br><br>
     `;
   },
 
