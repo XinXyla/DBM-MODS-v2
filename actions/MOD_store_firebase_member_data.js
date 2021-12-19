@@ -1,6 +1,6 @@
 /*
 * DBM Firebase 
-* Checagem: v2.0.9
+* Checagem: v2.0.9 [Ainda não funciona!]
 */
 
 module.exports = {
@@ -97,7 +97,7 @@ module.exports = {
 
     if (!fs.existsSync('./data/fbConfig.json')) {
       return console.log(
-        'You do not have the fbConfig.json file in your bot to continue use Firebase. Visit this repository to learn how to do it: https://github.com/cappp/dbm-firebase'
+        'You do not have the fbConfig.json file in your bot to continue use Firebase'
       );
     }
     
