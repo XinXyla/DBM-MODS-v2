@@ -1,8 +1,6 @@
 /*
-*
-*  DBM Firebase - v1.1.8
-*  https://github.com/cappp/dbm-firebase
-*
+* DBM Firebase 
+* Checagem: v2.0.9
 */
 
 module.exports = {
