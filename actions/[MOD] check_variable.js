@@ -1,17 +1,7 @@
 module.exports = {
-  //---------------------------------------------------------------------
-  // Action Name
-  //
-  // This is the name of the action displayed in the editor.
-  //---------------------------------------------------------------------
 
   name: "Check Variable",
 
-  //---------------------------------------------------------------------
-  // Action Section
-  //
-  // This is the section the action will fall into.
-  //---------------------------------------------------------------------
 
   section: "Conditions",
 
@@ -178,11 +168,9 @@ module.exports = {
           result = val1.includes(val2);
         }
         break;
-      case 6:
-        if (typeof val1?.match === "function") {
-          result = Boolean(val1.match(new RegExp("^" + val2 + "$", "i")));
-        }
-        break;
+        case 6:
+          result = Boolean(val1.match(new RegExp('^' + val2 + '$', 'i')));
+          break;
         case 7:
           result = Boolean(val1.length > val2);
           break;
