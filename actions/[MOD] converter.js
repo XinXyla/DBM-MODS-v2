@@ -4,11 +4,13 @@ name: "Converter",
 
 section: "Other Stuff",
 
-author: "XinXyla",
-
-version: "2.0.0",
 
 short_description: "Converte textos/números",
+
+meta: {
+	version: '2.1.1',
+	author: "XinXyla",
+},
 
 subtitle: function(data) {
 	const info = ['Número inteiro (Arredondado)', 'Número inteiro (Para cima)', 'Número inteiro (Para baixo)', 'Texto', 'Texto maiúsculo', 'Texto minúsculo', 'Texto sem espaços', 'Texto (Sem espaços de ambos os lados)'];
