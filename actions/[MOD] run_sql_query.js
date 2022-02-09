@@ -2,6 +2,10 @@ module.exports = {
   name: 'Run SQL Query',
   section: 'Other Stuff',
 
+  meta: {
+    version: '2.1.1',
+  },
+
   variableStorage (data, varType) {
     const type = parseInt(data.storage)
     if (type !== varType) return
