@@ -7,9 +7,11 @@ subtitle: function(data) {
 return `Convert ${data.time}`;
 },
 
-author: "XinXyla",
-version: "1.9.4",
-short_description: "Converter segundos em anos, dias, horas, minutos e segundos.",
+meta: {
+	version: '2.1.1',
+	author: "XinXyla",
+	short_description: "Converter segundos em anos, dias, horas, minutos e segundos.",
+},
 
 variableStorage: function(data, varType) {
 		const type = parseInt(data.storage);
