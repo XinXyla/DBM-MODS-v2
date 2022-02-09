@@ -2,7 +2,7 @@ module.exports = {
 	name: 'Replace Text',
 	section: 'Other Stuff',
 	meta: {
-	  version: '2.1',
+	  version: '2.1.1',
 	  preciseCheck: false,
 	  author: 'DBM Mods + XinXla',
 	  downloadURL: 'https://github.com/XinXyla/DBM-MODS-v2/blob/main/actions/%5BMOD%5D%20replace_text.js',
@@ -73,7 +73,7 @@ module.exports = {
 		case 1:
 		  result = text.split(oldValue).join(newValue);
 		  break;
-	  }
+	}
 	  if (result !== undefined) {
 		const storage = parseInt(data.storage, 10);
 		const varName = this.evalMessage(data.varName, cache);
