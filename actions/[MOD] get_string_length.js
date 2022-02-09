@@ -3,14 +3,11 @@ module.exports = {
 
 name: "Get String Length",
 
-
-    author: "XinXyla",
-
-
-    version: "1.0.0", 
-
-    short_description: "Calcula o número de caracteres.",
-
+meta: {
+	version: '2.1.1',
+	author: "XinXyla",
+	short_description: "Calcula o número de caracteres.",
+},
 
 section: "Other Stuff",
 
