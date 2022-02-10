@@ -74,7 +74,7 @@ module.exports = {
 		const data = cache.actions[cache.index];
 		const storage = parseInt(data.storage);
 		const varName = this.evalMessage(data.varName, cache);
-		const listas = this.getVariable(storage, varName, cache);
+		const list = this.getVariable(storage, varName, cache);
 		const sorte = parseInt(data.sorte);
 
     let result;
@@ -82,29 +82,29 @@ module.exports = {
 
 		switch(sorte) {
 			case 0:
-				result = listas.sort((a ,b)=> a - b);
+				result = list.sort((a ,b)=> a - b);
 				break;
 			case 1:
-				result = listas.sort((a ,b)=> b - a);
+				result = list.sort((a ,b)=> b - a);
 				break;
 			case 2:
-				result = listas.sort();
+				result = list.sort();
 				break;				
 			case 3:
-				result = listas.sort().reverse();
+				result = list.sort().reverse();
 				break;
 			case 4:
-				result = listas.sort(function(a, b){return a.length - b.length});
+				result = list.sort(function(a, b){return a.length - b.length});
 				break;
 			case 5:
-				result = listas.sort(function(a, b){return b.length - a.length});
+				result = list.sort(function(a, b){return b.length - a.length});
 				break;
 		}
 		
 		if (result !== undefined) {
-			const storage2 = parseInt(data.storage, 10);
+			const storage = parseInt(data.storage, 10);
 			const varName2 = this.evalMessage(data.varName2, cache);
-			this.storeValue(result, storage2, varName2, cache);
+			this.storeValue(result, storage, varName2, cache);
 		}
 	
 		this.callNextAction(cache);
