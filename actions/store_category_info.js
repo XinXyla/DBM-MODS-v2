@@ -204,25 +204,25 @@ module.exports = {
         result = targetCategory.deletable;
         break;
       case 6:
-        result = targetCategory.children.filter(channels => channels).map(channels => channels).join(", ");
+        result = targetCategory.children.filter(channels => channels).map(channels => channels).join(",");
         break;
       case 7:
         result = targetCategory.children.size;
         break;
       case 8:
-        result = targetCategory.children.filter((c) => ['GUILD_TEXT', 'GUILD_NEWS'].includes(c.type)).map(channels => channels).join(", ");
+        result = targetCategory.children.filter((c) => ['GUILD_TEXT', 'GUILD_NEWS'].includes(c.type)).map(channels => channels).join(",");
         break;
       case 9:
         result = targetCategory.children.filter((c) => ['GUILD_TEXT', 'GUILD_NEWS'].includes(c.type)).size;
         break;
         case 10:
-          result = targetCategory.children.filter((c) => ['GUILD_VOICE'].includes(c.type)).map(channels => channels).join(", ");
+          result = targetCategory.children.filter((c) => ['GUILD_VOICE'].includes(c.type)).map(channels => channels).join(",");
           break;
         case 11:
           result = targetCategory.children.filter((c) => ['GUILD_VOICE'].includes(c.type)).size;
           break;
           case 12:
-            result = targetCategory.children.filter((c) => ['GUILD_STAGE_VOICE'].includes(c.type)).map(channels => channels).join(", ");
+            result = targetCategory.children.filter((c) => ['GUILD_STAGE_VOICE'].includes(c.type)).map(channels => channels).join(",");
             break;
           case 13:
             result = targetCategory.children.filter((c) => ['GUILD_STAGE_VOICE'].includes(c.type)).size;
