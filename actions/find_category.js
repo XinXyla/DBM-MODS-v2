@@ -22,26 +22,26 @@ module.exports = {
     return `
 <div>
   <div style="float: left; width: 40%;">
-    Origem:<br>
+  <span class="dbminputlabel">Origem</span><br>
     <select id="info" class="round">
       <option value="0" selected>ID da Categoria</option>
       <option value="1">Nome da Categoria</option>
     </select>
   </div>
   <div style="float: right; width: 55%;">
-    Buscar:<br>
+  <span class="dbminputlabel">Buscar</span><br>
     <input id="find" class="round" type="text">
   </div>
 </div><br><br><br>
 <div style="padding-top: 8px;">
   <div style="float: left; width: 35%;">
-    Armazenar em:<br>
+  <span class="dbminputlabel">Armazenar em</span><br>
     <select id="storage" class="round">
       ${data.variables[1]}
     </select>
   </div>
   <div id="varNameContainer" style="float: right; width: 60%;">
-    Nome da variavel:<br>
+  <span class="dbminputlabel">Nome da variavel</span><br>
     <input id="varName" class="round" type="text">
   </div>
 </div><br><br><br>
