@@ -51,13 +51,29 @@ module.exports = {
         dataType = 'Boolean';
         break;
       case 6:
-        dataType = 'Channel List';
+        dataType = 'List';
         break;
-      case 8:
-        dataType = 'Text Channel List';
-        break;
-      case 10:
-        dataType = 'Voice Channel List';
+        case 7:
+          dataType = 'Number';
+          break;
+          case 8:
+            dataType = 'List';
+            break;
+            case 9:
+              dataType = 'Number';
+              break;
+              case 10:
+                dataType = 'List';
+                break;
+                case 11:
+                  dataType = 'Number';
+                  break;
+                  case 12:
+                    dataType = 'List';
+                    break;
+                    case 13:
+                      dataType = 'Number';
+                      break;
         break;
       default:
         break;
