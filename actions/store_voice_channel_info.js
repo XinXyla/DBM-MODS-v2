@@ -91,12 +91,12 @@ module.exports = {
 
   html(isEvent, data) {
     return `
-<voice-channel-input dropdownLabel="Source Channel" selectId="channel" variableContainerId="varNameContainer" variableInputId="varName" selectWidth="45%" variableInputWidth="50%"></voice-channel-input>
+<voice-channel-input dropdownLabel="Canal de origem" selectId="channel" variableContainerId="varNameContainer" variableInputId="varName" selectWidth="45%" variableInputWidth="50%"></voice-channel-input>
 
 <br><br><br>
 
 <div style="padding-top: 8px;">
-	<span class="dbminputlabel">Source Info</span><br>
+	<span class="dbminputlabel">Informações da fonte</span><br>
 	<select id="info" class="round">
 		<option value="0" selected>Objeto do canal de voz</option>
 		<option value="1">ID do canal de voz</option>
@@ -119,7 +119,7 @@ module.exports = {
 
 <br>
 
-<store-in-variable dropdownLabel="Store In" selectId="storage" variableContainerId="varNameContainer2" variableInputId="varName2"></store-in-variable>`;
+<store-in-variable dropdownLabel="Armazenar em" selectId="storage" variableContainerId="varNameContainer2" variableInputId="varName2"></store-in-variable>`;
   },
 
 
