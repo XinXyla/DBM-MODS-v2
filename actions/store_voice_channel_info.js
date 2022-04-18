@@ -159,7 +159,7 @@ module.exports = {
         result = targetChannel.bitrate;
         break;
       case 6:
-          result = targetChannel.members.filter(member => member).map(member => member.user).join(", ");
+          result = targetChannel.members.filter(member => member).map(member => member.user).join(",");
           break;
       case 7:
         result = targetChannel.members.size;
