@@ -1,6 +1,10 @@
 module.exports = {
   name: 'Fetch User',
   section: 'Member Control',
+    author: 'XinXla',
+  meta: {
+    version: '2.1.1',
+  },
 
   subtitle (data) {
     return `${data.User}`
