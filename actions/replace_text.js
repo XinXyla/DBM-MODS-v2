@@ -1,28 +1,26 @@
 module.exports = {
-	name: 'Replace Text',
-	section: 'Other Stuff',
-	meta: {
-	  version: '2.1.1',
-	  preciseCheck: false,
-	  author: 'DBM Mods + XinXla',
-	  downloadURL: 'https://github.com/XinXyla/DBM-MODS-v2/blob/main/actions/%5BMOD%5D%20replace_text.js',
-	},
-  
-	subtitle: function(data) {
-		const info = ['Substitua o primeiro resultado', 'Substitua todos os resultados']
-		return `${info[data.info]} "${data.text2}" por "${data.text3}" em "${data.text}"`;
-	},
-  
-	variableStorage(data, varType) {
-	  if (parseInt(data.storage, 10) !== varType) return;
-	  return [data.varName, 'String'];
-	},
-  
-	fields: ["text", "text2", "text3", "info", "storage", "varName"],
-  
-	html(isEvent, data) {
-	  return `
-	  <div style="padding-top: 3px;">
+  name: 'Replace Text',
+  section: 'Other Stuff',
+  meta: {
+    version: '2.1.1',
+    author: 'XinXyla',
+  },
+
+  subtitle(data) {
+    const info = ['Substitua o primeiro resultado', 'Substitua todos os resultados'];
+    return `${info[data.info]}`;
+  },
+
+  variableStorage(data, varType) {
+    if (parseInt(data.storage, 10) !== varType) return;
+    return `${info[data.info]} "${data.text2}" por "${data.text3}" em "${data.text}"`;
+  },
+
+  fields: ['text', 'text2', 'text3', 'info', 'storage', 'varName'],
+
+  html(isEvent, data) {
+    return `
+    <div style="padding-top: 3px;">
 	  Texto original:
 		  <textarea id="text" rows="5" placeholder="Insira o texto aqui..." style="width: 99%; font-family: monospace; white-space: nowrap;"></textarea>
 	  </div>
@@ -35,7 +33,7 @@ module.exports = {
 			  <textarea id="text3" rows="1" class="round" style="width:100%"></textarea>
 		  </div>
 	  </div>
-	  <div>	
+	  <div style="padding-top: 8px; width: 100%;">
 	  Modelo:<br>
 	  <select id="info" class="round">
 		  <option value="0" selected>Substitua o primeiro resultado</option>
@@ -54,33 +52,33 @@ module.exports = {
 			  <input id="varName" class="round" type="text">
 		  </div>
 	  </div>`;
-	},
-  
-	init() {},
-  
-	async action(cache) {
-	  const data = cache.actions[cache.index];
-	  const text = this.evalMessage(data.text, cache);
-	  const oldValue = this.evalMessage(data.text2, cache);
-	  const newValue = this.evalMessage(data.text3, cache);
-	  const info = parseInt(data.info, 10);
-  
-	  let result;
-	  switch (info) {
-		case 0:
-		  result = text.replace(oldValue, newValue);
-		  break;
-		case 1:
-		  result = text.split(oldValue).join(newValue);
-		  break;
-	}
-	  if (result !== undefined) {
-		const storage = parseInt(data.storage, 10);
-		const varName = this.evalMessage(data.varName, cache);
-		this.storeValue(result, storage, varName, cache);
-	  }
-	  this.callNextAction(cache);
-	},
-  
-	mod() {},
-  };
+  },
+
+  init() {},
+
+  async action(cache) {
+    const data = cache.actions[cache.index];
+    const text = this.evalMessage(data.text, cache);
+    const oldValue = this.evalMessage(data.text2, cache);
+    const newValue = this.evalMessage(data.text3, cache);
+    const info = parseInt(data.info, 10);
+
+    let result;
+    switch (info) {
+      case 0:
+        result = text.replace(oldValue, newValue);
+        break;
+      case 1:
+        result = text.split(oldValue).join(newValue);
+        break;
+    }
+    if (result !== undefined) {
+      const storage = parseInt(data.storage, 10);
+      const varName = this.evalMessage(data.varName, cache);
+      this.storeValue(result, storage, varName, cache);
+    }
+    this.callNextAction(cache);
+  },
+
+  mod() {},
+};
