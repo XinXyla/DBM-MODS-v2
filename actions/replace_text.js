@@ -8,12 +8,12 @@ module.exports = {
 
   subtitle(data) {
     const info = ['Substitua o primeiro resultado', 'Substitua todos os resultados'];
-    return `${info[data.info]}`;
+    return `${info[data.info]} "${data.text2}" por "${data.text3}" de "${data.text}"`;
   },
 
   variableStorage(data, varType) {
     if (parseInt(data.storage, 10) !== varType) return;
-    return `${info[data.info]} "${data.text2}" por "${data.text3}" em "${data.text}"`;
+    return [data.varName, 'String'];
   },
 
   fields: ['text', 'text2', 'text3', 'info', 'storage', 'varName'],
