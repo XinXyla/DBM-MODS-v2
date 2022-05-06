@@ -1,6 +1,6 @@
 module.exports = {
 
-name: "Converter segundos em A/M/D/H/M/S",
+name: "Converter segundos em A/D/H/M/S",
 section: "Other Stuff",
 
 subtitle: function(data) {
