@@ -39,25 +39,16 @@ module.exports = {
   html (isEvent, data) {
     return `
 
-  <div id="wrexdiv" style="width: 550px; height: 370px; overflow-y: scroll;">
-  <div>
-    <p>
-    Com este mod, você pode executar consultas SQL usando MySQL, MsSQL, postgres e SQLite.
-    </p>
-    <p>
-      <u><span class="wrexlink" data-url="https://www.w3schools.com/sql/">W3 Schools SQL Tutorial</span></u> / <u><span class="wrexlink" data-url="https://tutorialzine.com/2016/01/learn-sql-in-20-minutes">Aprenda SQL em 20 minutos</span></u><br />
-    </p>
-  </div><br />
-  <div id="getSource">
-  Se for selecionado, ele usará uma conexão armazenada<br /><br />
-    <div style="float: left; width: 35%;">
-    Fonte de Conexão:<br />
+  <div id="wrexdiv" style="height: 370px; overflow-y: scroll;padding:0px 10px">
+    <div id="getSource"><br />
+     <div style="float: left; width: 35%;">
+    <span class="dbminputlabel">Fonte de Conexão</span><br />
       <select id="source_conn_storage" class="round" onchange="glob.variableChange(this, 'varNameContainer2')">
         ${data.variables[0]}
       </select><br />
     </div>
     <div id="varNameContainer2" style="display: ; float: right; width: 60%;">
-      Nome da variável:<br />
+    <span class="dbminputlabel">Nome da variável</span><br />
       <input id="source_conn_varName" class="round" type="text" />
     </div><br /><br />
   </div><br /><br />
@@ -118,52 +109,66 @@ module.exports = {
         </div>
       </div>
       <div><br />
-        <label for="query">Query String</label>
-        <textarea id="query" class="round" placeholder="SELECT * FROM 'users'" style="width: 94%;" type="textarea" rows="8" cols="19"></textarea><br /><br />
+        <label for="query"> <span class="dbminputlabel">Query String</span></label>
+        <textarea id="query" class="round" placeholder="SELECT * FROM 'users'" style="width: 100%;" type="textarea" rows="6" cols="19"></textarea><br />
       </div>
-      JSON Path: (Deixe em branco para armazenar tudo)<br /> Oferece suporte ao uso do caminho JSON<br>
-      Mais informações aqui  <u><span class="wrexlink" data-url="http://goessner.net/articles/JsonPath/index.html#e2">JSON Path</span></u><br>
-      <input id="path" class="round"; style="width: 94%;" type="text"><br>
+      <div><span class="dbminputlabel">JSON Path</span> 
+      <input id="path" class="round"; style="width: 100%;" type="text"></div><br>
+      Deixe em branco para armazenar tudo<br /> Oferece suporte ao uso do caminho JSON<br>
+      Mais informações aqui  <u><span class="wrexlink" data-url="http://goessner.net/articles/JsonPath/index.html#e2">JSON Path</span></u><br /><br />
       <div style="float: left; width: 35%;">
-      Resultados em:<br />
+      <span class="dbminputlabel">Resultados em</span><br />
         <select id="storage" class="round" onchange="glob.variableChange(this, 'varNameContainer')">
           ${data.variables[0]}
         </select>
       </div>
       <div id="varNameContainer" style="display: ; float: right; width: 60%;">
-        Nome da variável:<br />
+      <span class="dbminputlabel">Nome da variável</span><br />
         <input id="varName" class="round" type="text" /><br />
-      </div><br><br><br><br>
+      </div><br><br><br>
       <div id="storeSource"><br />
-      Armazene a conexão em uma variável para salvar as conexões com o banco de dados.<br>
-      Não usado se a conexão de origem estiver definida<br /><br />
+      
         <div style="float: left; width: 35%;">
-        Fonte de conexão armazenada:<br />
+        <span class="dbminputlabel">Conexão armazenada</span><br />
           <select id="store_source_conn_storage" class="round" onchange="glob.variableChange(this, 'varNameContainer3')">
             ${data.variables[0]}
           </select>
         </div>
         <div id="varNameContainer3" style="display: ; float: right; width: 60%;">
-          Nome da variável:<br />
+        <span class="dbminputlabel">Nome da variável</span><br />
           <input id="store_source_conn_varName" class="round" type="text" />
         </div>
-      </div><br /><br /><br /><br />
-      <div style="float: left; width: 35%;">
-      Modo de depuração: (ative para ver a impressão detalhada no console do bot)<br />
+      </div><br /><br /><br /><br />Armazene a conexão em uma variável para salvar as conexões com o banco de dados.<br>
+      Não usado se a conexão de origem estiver definida<br /><br /><br />
+      <div style="float: left; width: 100%;">
+      <span class="dbminputlabel">Modo de depuração</span><br />
         <select id="debugMode" class="round">
           <option value="1">Habilitado</option>
           <option value="0" selected="selected">Desabilitado</option>
         </select>
-      </div><br /><br /><br /><br /><br /><br />
-      <div style="float: left; width: 35%;">
-      Restringir saída: (restringe os resultados no chat)<br />
-      Habilite isto para não mostrar [Object object] no chat
-      Deve ser desativado para verificar as condições.<br />
+      </div><br /><div style="width:100%">Ative para ver a impressão detalhada no console do bot</div><br /><br />
+      <div style="float: left; width: 100%;">
+      <span class="dbminputlabel">Restringir saída</span>
       <select id="stringifyOutput" class="round">
         <option value="1">Habilitado</option>
         <option value="0" selected="selected">Desabilitado</option>
-      </select><br><br>
-    </div></div>
+      </select>
+      </div>
+      <br /><br />
+      Restringe os resultados no chat<br />
+    Habilite isto para não mostrar [Object object] no chat
+    Deve ser desativado para verificar as condições.<br /><br />
+      <div>
+      <p>
+      Com este mod, você pode executar consultas SQL usando MySQL, MsSQL, postgres e SQLite.
+      </p>
+      <p>
+        <u><span class="wrexlink" data-url="https://www.w3schools.com/sql/">W3 Schools SQL Tutorial</span></u> / <u><span class="wrexlink" data-url="https://tutorialzine.com/2016/01/learn-sql-in-20-minutes">Aprenda SQL em 20 minutos</span></u><br />
+      </p>
+    </div><br />
+
+
+    </div>
  
     <style>
   .embed {
@@ -411,7 +416,7 @@ module.exports = {
               // if it failed still, try just pulling the first object
               if (jsonOut === false) jsonOut = Mods.jsonPath(results, ('$.[0].').concat(path))
               if (jsonOut) {
-                if (jsonOut.length === 1) jsonOut = jsonOut[0]
+                if (jsonOut.length === 0) jsonOut = jsonOut[0]
                 if (DEBUG) console.log(`Run SQL Query: valores de dados JSON começando em [${path}] armazenados em [${varName}]`)
                 if (DEBUG) console.dir(jsonOut)
               }
