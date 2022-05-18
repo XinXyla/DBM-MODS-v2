@@ -3,7 +3,7 @@ module.exports = {
   section: 'Lists and Loops',
   author: 'XinXla',
   meta: {
-    version: '2.1.1',
+    version: '2.1.2',
   },
 
   subtitle(data) {

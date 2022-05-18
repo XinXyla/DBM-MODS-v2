@@ -3,7 +3,7 @@ module.exports = {
   section: 'Other Stuff',
 
   meta: {
-    version: '2.1.1',
+    version: '2.1.2',
   },
 
   variableStorage (data, varType) {

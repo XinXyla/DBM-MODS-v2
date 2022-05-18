@@ -2,7 +2,7 @@ module.exports = {
   name: 'Replace Text',
   section: 'Other Stuff',
   meta: {
-    version: '2.1.1',
+    version: '2.1.2',
     author: 'XinXyla',
   },
 

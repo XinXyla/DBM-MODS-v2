@@ -8,7 +8,7 @@ section: "Other Stuff",
 short_description: "Converte textos/números",
 
 meta: {
-	version: '2.1.1',
+	version: '2.1.2',
 	author: "XinXyla",
 },
 

@@ -4,7 +4,7 @@ module.exports = {
 name: "Get String Length",
 
 meta: {
-	version: '2.1.1',
+	version: '2.1.2',
 	author: "XinXyla",
 	short_description: "Calcula o número de caracteres.",
 },

@@ -25,7 +25,7 @@ module.exports = {
   // This will make it so the patch version (0.0.X) is not checked.
   //---------------------------------------------------------------------
 
-  meta: { version: "2.1.1", preciseCheck: true, author: null, authorUrl: null, downloadUrl: null },
+  meta: { version: "2.1.2", preciseCheck: true, author: "XinXyla", authorUrl: null, downloadUrl: null },
 
   //---------------------------------------------------------------------
   // Action Fields
@@ -164,27 +164,27 @@ module.exports = {
         result = val1 > val2;
         break;
       case 5:
-        if (typeof val1?.includes === "function") {
-          result = val1.includes(val2);
+        if (typeof val1?.toString().includes === "function") {
+          result = val1.toString().includes(val2);
         }
         break;
         case 6:
-          result = Boolean(val1.match(new RegExp('^' + val2 + '$', 'i')));
+          result = Boolean(val1.toString().match(new RegExp('^' + val2 + '$', 'i')));
           break;
         case 7:
-          result = Boolean(val1.length > val2);
+          result = Boolean(val1.toString().length > val2);
           break;
         case 8:
-          result = Boolean(val1.length < val2);
+          result = Boolean(val1.toString().length < val2);
           break;
         case 9:
-          result = Boolean(val1.length == val2);
+          result = Boolean(val1.toString().length == val2);
           break;
         case 10:
-          result = val1.startsWith(val2);
+          result = val1.toString().startsWith(val2);
           break;
         case 11:
-          result = val1.endsWith(val2);
+          result = val1.toString().endsWith(val2);
           break;
           case 12:
           result = Boolean(val1 >= val2);
