@@ -4,6 +4,6 @@
 
 Aqui estarão todos os MOD da Versão 2 do Discord Bot Maker traduzidas para o Português/Brasil
 
-Revisão: v2.1.1
+Revisão: v2.1.2
 
 Servidor do DBM Brazil: https://discord.gg/KfrffKXxbb
