@@ -13,7 +13,7 @@ meta: {
 },
 
 subtitle: function(data) {
-	const info = ['Número inteiro (Arredondado)', 'Número inteiro (Para cima)', 'Número inteiro (Para baixo)', 'Texto', 'Texto maiúsculo', 'Texto minúsculo', 'Texto sem espaços', 'Texto (Sem espaços de ambos os lados)'];
+	const info = ['Número inteiro (Arredondado)', 'Número inteiro (Para cima)', 'Número inteiro (Para baixo)', 'Texto', 'Texto maiúsculo', 'Texto minúsculo', 'Texto sem espaços', 'Texto (Sem espaços de ambos os lados)', 'Número com pontuações' , 'Número resumido', 'Formato de dinheiro R$', 'Formato de dinheiro U$', 'Formato de dinheiro €'];
 	const prse = parseInt(data.into);
 	return `Converter "${data.vAria}" em ${info[prse]}`;
 },
@@ -45,6 +45,11 @@ html: function(isEvent, data) {
 				<option value="0" selected>Número inteiro (Arredondado)</option>
 				<option value="1">Número inteiro (Para cima)</option>
 				<option value="2">Número inteiro (Para baixo)</option>
+				<option value="8">Número com pontuações (Ex: 1.000)</option>
+				<option value="9">Número resumido (Ex: 1k)</option>
+				<option value="10">Formato de dinheiro R$</option>
+				<option value="11">Formato de dinheiro U$</option>
+				<option value="12">Formato de dinheiro €</option>
 				<option value="3">Texto</option>
 				<option value="4">Texto maiúsculo</option>
 				<option value="5">Texto minúsculo</option>
@@ -103,10 +108,10 @@ action: function(cache) {
 
 	switch (INTO) {
 			case 0:
-				result = Math.round(theVar);
+				result = Math.round(theVar.toString().replace(',','.'));
 				break;
 			case 1:
-				result = Math.ceil(theVar);
+				result = Math.ceil(theVar.toString().replace(',','.'));
 				break;
 			case 2:
 				result = parseInt(theVar);
@@ -126,6 +131,77 @@ action: function(cache) {
 			case 7:
 				result = theVar.toString().trim();
 				break;
+				case 8:
+				result = theVar.toLocaleString("pt-BR");
+				break;
+				case 9:
+				var number = parseInt(this.evalMessage(theVar, cache));
+
+				if(number >= 1000 && number <= 999999) {
+					number = number.toString().slice(0, -3) + "k";
+				}
+				
+				if(number >= 1e+6 && number <= 1e+8) {
+					number = number.toString().slice(0, -6) + "m";
+				}
+				
+				if(number >= 1e+9 && number <= 1e+11) {
+					number = number.toString().slice(0, -9) + "b";
+				}
+				
+				if(number >= 1e+12 && number <= 1e+14) {
+					number = number.toString().slice(0, -12) + "t";
+				}
+				if(number >= 1e+15 && number <= 1e+17) {
+					number = number.toString().slice(0, -15) + "q";
+				}
+				if(number >= 1e+18 && number <= 1e+20) {
+					number = number.toString().slice(0, -18) + "sx";
+				}
+				if(number >= 1e+21 && number <= 1e+23) {
+					number = number.toString().slice(0, -4) + "sp";
+				}
+				if(number >= 1e+24 && number <= 1e+26) {
+					number = number.toString().slice(0, -4) + "o";
+				}
+				if(number >= 1e+27 && number <= 1e+29) {
+					number = number.toString().slice(0, -4) + "n";
+				}
+				if(number >= 1e+30 && number <= 1e+32) {
+					number = number.toString().slice(0, -4) + "d";
+				}
+				if(number >= 1e+33 && number <= 1e+35) {
+					number = number.toString().slice(0, -4) + "u";
+				}
+				if(number >= 1e+36 && number <= 1e+38) {
+					number = number.toString().slice(0, -4) + "du";
+				}
+				if(number >= 1e+39) {
+					number = number.toString().slice(0, -4) + "tr";
+				}
+				result = number;
+				break;
+				case 10:
+					let money = Intl.NumberFormat("pt-BR", {
+						style: "currency",
+						currency: "BRL",
+					});
+					result = money.format(theVar.toString().replace(',','.'))
+				break;
+				case 11:
+					let money2 = Intl.NumberFormat("en-US", {
+						style: "currency",
+						currency: "USD",
+						});
+						result = money2.format(theVar.toString().replace(',','.'))
+						break;
+				case 12:
+					let money3 = Intl.NumberFormat("de-DE", {
+						style: "currency",
+						currency: "EUR",
+						});
+						result = money3.format(theVar.toString().replace(',','.'))
+						break;
 	}
 	if(result !== undefined) {
 		const storage = parseInt(data.storage);
