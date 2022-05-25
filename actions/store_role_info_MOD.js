@@ -138,7 +138,7 @@ module.exports = {
     <option value="16">ID do Servidor do Cargo</option>
     </optgroup>
     <optgroup label="Informações do Cargo em Listas">
-    <option value="9">Lista de membros do Cargo/option>
+    <option value="9">Lista de membros do Cargo</option>
     <option value="18">Lista de IDs de membros do Cargo</option>
     <option value="11">Lista de permissões do Cargo</option>
     </optgroup>
