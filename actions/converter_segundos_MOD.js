@@ -8,7 +8,7 @@ return `Convert ${data.time}`;
 },
 
 meta: {
-	version: '2.1.2',
+	version: '2.1.3',
 	author: "XinXyla",
 	short_description: "Converter segundos em anos, meses, dias, horas, minutos e segundos.",
 },
