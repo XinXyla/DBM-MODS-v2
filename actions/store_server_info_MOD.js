@@ -5,7 +5,7 @@ module.exports = {
   section: "Server Control",
  
   meta: {
-    version: '2.1.3,
+    version: '2.1.3',
     author: 'XinXyla',
   },
 
