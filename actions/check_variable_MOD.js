@@ -25,7 +25,7 @@ module.exports = {
   // This will make it so the patch version (0.0.X) is not checked.
   //---------------------------------------------------------------------
 
-  meta: { version: "2.1.2", preciseCheck: true, author: "XinXyla", authorUrl: null, downloadUrl: null },
+  meta: { version: "2.1.3", preciseCheck: true, author: "XinXyla", authorUrl: null, downloadUrl: null },
 
   //---------------------------------------------------------------------
   // Action Fields
