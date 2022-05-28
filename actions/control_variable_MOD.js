@@ -36,7 +36,7 @@ module.exports = {
   },
 
 
-  meta: { version: "2.1.2", preciseCheck: true, author: "XinXyla", authorUrl: null, downloadUrl: null },
+  meta: { version: "2.1.3", preciseCheck: true, author: "XinXyla", authorUrl: null, downloadUrl: null },
 
 
   fields: ["storage", "varName", "changeType", "value"],
