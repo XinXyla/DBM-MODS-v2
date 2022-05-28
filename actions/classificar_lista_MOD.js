@@ -5,7 +5,7 @@ module.exports = {
 	short_description: "Classifica uma lista",
 	author: 'XinXla',
 	meta: {
-	  version: '2.1.2',
+	  version: '2.1.3',
 	},
 	
 	subtitle: function(data) {
