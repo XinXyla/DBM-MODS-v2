@@ -4,7 +4,7 @@ module.exports = {
     name: "Store Date Info Plus",
     section: "Other Stuff",
     meta: {
-    version: '2.1.2',
+    version: '2.1.3',
     },
    
     subtitle: function(data) {
