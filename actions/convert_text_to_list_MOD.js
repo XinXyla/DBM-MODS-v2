@@ -2,7 +2,7 @@ module.exports = {
   name: 'Convert Text to List',
   section: 'Lists and Loops',
   meta: {
-    version: '2.1.2',
+    version: '2.1.3',
     preciseCheck: false,
     author: 'XinXyla',
   },
