@@ -3,7 +3,7 @@ module.exports = {
   section: 'Member Control',
     author: 'XinXla',
   meta: {
-    version: '2.1.2',
+    version: '2.1.3',
   },
 
   subtitle (data) {
