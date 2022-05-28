@@ -8,7 +8,7 @@ module.exports = {
 
   
   meta: {
-    version: '2.1.2',
+    version: '2.1.3',
     author: 'XinXyla',
   },
 
